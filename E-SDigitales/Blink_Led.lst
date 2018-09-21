@@ -1,0 +1,79 @@
+CCS PCM C Compiler, Version 4.120, 11074               21-sep.-18 08:44
+
+               Filename: C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\Blink_Led.lst
+
+               ROM used: 50 words (2%)
+                         Largest free fragment is 1998
+               RAM used: 5 (4%) at main() level
+                         21 (16%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   019
+0002:  NOP
+.................... #include <16F1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #fuses PUT, NOWDT 
+....................  
+.................... #use delay(int=32Mhz) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  05
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  21
+000C:  CLRF   20
+000D:  DECFSZ 20,F
+000E:  GOTO   00D
+000F:  DECFSZ 21,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  20
+0013:  DECFSZ 20,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  MOVLP  00
+0018:  GOTO   031 (RETURN)
+.................... #use standard_io(A) 
+.................... void main() 
+.................... { 
+0019:  CLRF   05
+001A:  CLRF   04
+001B:  MOVLW  1F
+001C:  ANDWF  03,F
+001D:  MOVLW  F4
+001E:  MOVLB  01
+001F:  MOVWF  19
+0020:  MOVLB  03
+0021:  CLRF   0C
+0022:  CLRF   0E
+0023:  MOVLB  02
+0024:  CLRF   12
+0025:  CLRF   11
+0026:  CLRF   14
+0027:  CLRF   13
+....................    Output_toggle(Pin_A0); 
+0028:  MOVLB  01
+0029:  BCF    0C.0
+002A:  MOVLW  01
+002B:  MOVLB  02
+002C:  XORWF  0C,F
+....................    delay_ms(100); 
+002D:  MOVLW  64
+002E:  MOVLB  00
+002F:  MOVWF  25
+0030:  GOTO   003
+.................... } 
+0031:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3FC4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

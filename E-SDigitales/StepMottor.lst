@@ -1,0 +1,138 @@
+CCS PCM C Compiler, Version 4.120, 11074               22-sep.-18 11:23
+
+               Filename: C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\StepMottor.lst
+
+               ROM used: 77 words (4%)
+                         Largest free fragment is 1971
+               RAM used: 6 (5%) at main() level
+                         23 (18%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   018
+0002:  NOP
+.................... #include <16f1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #fuses PUT, NOWDT 
+....................  
+.................... #use delay(int = 32Mhz) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  07
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  21
+000C:  CLRF   20
+000D:  DECFSZ 20,F
+000E:  GOTO   00D
+000F:  DECFSZ 21,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  20
+0013:  DECFSZ 20,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+.................... //declaracion de registros c de acuerdo a la datasheet 
+....................  
+.................... #Byte trisa = 0x08c 
+.................... #byte trisc = 0x08e 
+.................... #byte porta = 0x00c 
+.................... #byte portc = 0x00e 
+.................... void main() 
+.................... { 
+0018:  CLRF   05
+0019:  CLRF   04
+001A:  MOVLW  1F
+001B:  ANDWF  03,F
+001C:  MOVLW  F4
+001D:  MOVLB  01
+001E:  MOVWF  19
+001F:  MOVF   1A,W
+0020:  MOVLB  03
+0021:  CLRF   0C
+0022:  CLRF   0E
+0023:  MOVLB  02
+0024:  CLRF   12
+0025:  CLRF   11
+0026:  CLRF   14
+0027:  CLRF   13
+....................    trisa = 1;//todo el puerto A como salida 
+0028:  MOVLW  01
+0029:  MOVLB  01
+002A:  MOVWF  0C
+....................    trisc = 0;//todo el puerto C como salida 
+002B:  CLRF   0E
+....................    int1 button = 0; 
+....................    int8 i = 0; 
+002C:  MOVLB  00
+002D:  BCF    25.0
+002E:  CLRF   26
+....................  
+....................     
+....................    while(true) 
+....................    { 
+....................       while(bit_test(porta,0)==1){ 
+002F:  BTFSS  0C.0
+0030:  GOTO   04B
+....................          button = 1; 
+0031:  BSF    25.0
+....................          if(button == 1){ 
+0032:  BTFSS  25.0
+0033:  GOTO   04A
+....................       portc = 0b001100; 
+0034:  MOVLW  0C
+0035:  MOVWF  0E
+....................       delay_ms(100); 
+0036:  MOVLW  64
+0037:  MOVWF  27
+0038:  CALL   003
+....................       portc = 0b001001; 
+0039:  MOVLW  09
+003A:  MOVWF  0E
+....................       delay_ms(100); 
+003B:  MOVLW  64
+003C:  MOVWF  27
+003D:  CALL   003
+....................       portc = 0b000011; 
+003E:  MOVLW  03
+003F:  MOVWF  0E
+....................       delay_ms(100); 
+0040:  MOVLW  64
+0041:  MOVWF  27
+0042:  CALL   003
+....................       portc = 0b000110; 
+0043:  MOVLW  06
+0044:  MOVWF  0E
+....................       delay_ms(100); 
+0045:  MOVLW  64
+0046:  MOVWF  27
+0047:  CALL   003
+....................        
+....................       if(bit_test(porta,0)==0){ 
+0048:  BTFSC  0C.0
+0049:  GOTO   04A
+....................          button ==0; 
+....................       } 
+....................        
+....................       } 
+....................        
+....................        
+....................       } 
+004A:  GOTO   02F
+....................    } 
+004B:  GOTO   02F
+.................... } 
+004C:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3FC4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

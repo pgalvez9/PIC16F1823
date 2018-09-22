@@ -1,0 +1,43 @@
+#include <16f1823.h>
+#fuses PUT, NOWDT
+
+#use delay(int = 32Mhz)
+//declaracion de registros c de acuerdo a la datasheet
+
+#Byte trisa = 0x08c
+#byte trisc = 0x08e
+#byte porta = 0x00c
+#byte portc = 0x00e
+void main()
+{
+   trisa = 1;//todo el puerto A como salida
+   trisc = 0;//todo el puerto C como salida
+   int1 button = 0;
+   int8 i = 0;
+
+   
+   while(true)
+   {
+      while(bit_test(porta,0)==1){
+         button = 1;
+         if(button == 1&& i  ){
+      portc = 0b001100;
+      delay_ms(100);
+      portc = 0b001001;
+      delay_ms(100);
+      portc = 0b000011;
+      delay_ms(100);
+      portc = 0b000110;
+      delay_ms(100);
+      
+      if(bit_test(porta,0)==0){
+         button ==0;
+         i++;
+      }
+      
+      }
+      
+      
+      }
+   }
+}

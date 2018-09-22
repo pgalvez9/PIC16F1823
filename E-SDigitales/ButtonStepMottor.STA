@@ -1,0 +1,44 @@
+
+ROM used: 80 (4%)
+          80 (4%) including unused fragments
+
+          0 Average locations per line
+          4 Average locations per statement
+
+RAM used: 6 (5%) at main() level
+          22 (17%) worst case
+
+Stack used: 2 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   42    21 100  ButtonStepMottor.c
+  452     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h
+----- -----
+  494    21 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21  26   1             @delay_ms1
+0     34  42   1   255  4.1  main
+0     22  28   0   152  1.8  s
+
+Program metrics:
+    Functions               2
+    Statements              21
+    Comments                96
+    Volume (V)              491
+    Difficilty (D)          5.7
+    Effort to implement (E) 2814
+    Time to implement (T)   3 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   2
+    Maintainability (MI)    56
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-007FF    77  1968  
+
+
+

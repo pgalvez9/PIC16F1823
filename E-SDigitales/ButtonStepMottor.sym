@@ -1,0 +1,68 @@
+004-005 @READ_PACKED_MEMORY.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004-005 @READ_PROGRAM_MEMORY8.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+00C     porta
+00E     portc
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+025.0   main.aux
+026     @delay_ms1.P1
+026     main.@SCRATCH1
+08C     trisa
+08E     trisc
+111.6   C1OUT
+113.6   C2OUT
+191-192 @WRITE_PROGRAM_MEMORY8.P1
+191-192 @READ_PROGRAM_MEMORY8.P2
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+0003  @delay_ms1
+002E  main
+0018  s
+002E  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\
+
+Project Files:
+    ButtonStepMottor.c                                      [22-sep.-18 11:35  CRC=C74940D8]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h [13-abr.-11 15:01  CRC=691538BE]
+
+Source signature=9973B254
+
+Units:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\ButtonStepMottor (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      ButtonStepMottor.err
+    Ext Symbols: ButtonStepMottor.esym
+    INHX8:       ButtonStepMottor.hex
+    Symbols:     ButtonStepMottor.sym
+    List:        ButtonStepMottor.lst
+    Debug/COFF:  ButtonStepMottor.cof
+    Project:     ButtonStepMottor.PJT
+    Call Tree:   ButtonStepMottor.tre
+    Statistics:  ButtonStepMottor.STA

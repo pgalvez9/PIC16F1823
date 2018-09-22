@@ -1,0 +1,64 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004     @WRITE_PROGRAM_MEMORY8.P3
+004-005 @READ_PACKED_MEMORY.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+00C     porta
+00E     portc
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+025     main.@SCRATCH1
+08C     trisa
+08E     trisc
+111.6   C1OUT
+113.6   C2OUT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+291     CCP_1_LOW
+291     CCP_1
+292     CCP_1_HIGH
+
+ROM Allocation:
+0003  main
+0003  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\
+
+Project Files:
+    EntradaDigital.c                                        [22-sep.-18 10:00  CRC=26CFE5C2]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h [13-abr.-11 15:01  CRC=691538BE]
+
+Source signature=F8FA573E
+
+Units:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\EntradaDigital (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      EntradaDigital.err
+    Ext Symbols: EntradaDigital.esym
+    INHX8:       EntradaDigital.hex
+    Symbols:     EntradaDigital.sym
+    List:        EntradaDigital.lst
+    Debug/COFF:  EntradaDigital.cof
+    Project:     EntradaDigital.PJT
+    Call Tree:   EntradaDigital.tre
+    Statistics:  EntradaDigital.STA

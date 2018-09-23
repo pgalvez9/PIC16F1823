@@ -1,0 +1,204 @@
+CCS PCM C Compiler, Version 4.120, 31882               23-sep.-18 00:52
+
+               Filename: C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\BlinkLed.lst
+
+               ROM used: 133 words (6%)
+                         Largest free fragment is 1915
+               RAM used: 7 (5%) at main() level
+                         23 (18%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   018
+0002:  NOP
+.................... #include <16f1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #fuses PUT, NOWDT 
+....................  
+.................... #use delay(int = 32 MHz) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  06
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  21
+000C:  CLRF   20
+000D:  DECFSZ 20,F
+000E:  GOTO   00D
+000F:  DECFSZ 21,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  20
+0013:  DECFSZ 20,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+.................... #BYTE TrisA = 0x08c 
+.................... #BYTE TrisC = 0x08e 
+.................... #BYTE PortA = 0x00c 
+.................... #BYTE PortC = 0x00e 
+.................... int k = 0; 
+....................  
+.................... int main(void) { 
+0018:  CLRF   05
+0019:  CLRF   04
+001A:  MOVLW  1F
+001B:  ANDWF  03,F
+001C:  MOVLW  F4
+001D:  MOVLB  01
+001E:  MOVWF  19
+001F:  MOVLB  00
+0020:  CLRF   24
+0021:  MOVLB  03
+0022:  CLRF   0C
+0023:  CLRF   0E
+0024:  MOVLB  02
+0025:  CLRF   12
+0026:  CLRF   11
+0027:  CLRF   14
+0028:  CLRF   13
+.................... // Se definen los puertos como salidas 
+....................    TrisA = 0b000000; 
+0029:  MOVLB  01
+002A:  CLRF   0C
+....................    TrisC = 0b000000; 
+002B:  CLRF   0E
+....................     
+....................    PortA = 0b000000; 
+002C:  MOVLB  00
+002D:  CLRF   0C
+....................    PortC = 0b000000; 
+002E:  CLRF   0E
+....................     
+....................    // >>= 1 
+....................     
+....................    for(;;) { 
+....................       for(k=32; k>0; k/=2) { 
+002F:  MOVLW  20
+0030:  MOVWF  24
+0031:  MOVF   24,F
+0032:  BTFSC  03.2
+0033:  GOTO   044
+....................          if(k!=8) { 
+0034:  MOVF   24,W
+0035:  SUBLW  08
+0036:  BTFSC  03.2
+0037:  GOTO   041
+....................             PortA = k; 
+0038:  MOVF   24,W
+0039:  MOVWF  0C
+....................             delay_ms(500); 
+003A:  MOVLW  02
+003B:  MOVWF  25
+003C:  MOVLW  FA
+003D:  MOVWF  26
+003E:  CALL   003
+003F:  DECFSZ 25,F
+0040:  GOTO   03C
+....................          } 
+....................       } 
+0041:  BCF    03.0
+0042:  RRF    24,F
+0043:  GOTO   031
+....................       PortA = 0; 
+0044:  CLRF   0C
+....................        
+....................       for(k=32; k>0; k/=2) { 
+0045:  MOVLW  20
+0046:  MOVWF  24
+0047:  MOVF   24,F
+0048:  BTFSC  03.2
+0049:  GOTO   056
+....................       PortC = k; 
+004A:  MOVF   24,W
+004B:  MOVWF  0E
+....................       delay_ms(500); 
+004C:  MOVLW  02
+004D:  MOVWF  25
+004E:  MOVLW  FA
+004F:  MOVWF  26
+0050:  CALL   003
+0051:  DECFSZ 25,F
+0052:  GOTO   04E
+....................       } 
+0053:  BCF    03.0
+0054:  RRF    24,F
+0055:  GOTO   047
+....................       PortC = 0; 
+0056:  CLRF   0E
+....................        
+....................       for(k=2; k<34; k*=2) { 
+0057:  MOVLW  02
+0058:  MOVWF  24
+0059:  MOVF   24,W
+005A:  SUBLW  21
+005B:  BTFSS  03.0
+005C:  GOTO   069
+....................       PortC = k; 
+005D:  MOVF   24,W
+005E:  MOVWF  0E
+....................       delay_ms(500); 
+005F:  MOVLW  02
+0060:  MOVWF  25
+0061:  MOVLW  FA
+0062:  MOVWF  26
+0063:  CALL   003
+0064:  DECFSZ 25,F
+0065:  GOTO   061
+....................       } 
+0066:  BCF    03.0
+0067:  RLF    24,F
+0068:  GOTO   059
+....................       PortC = 0; 
+0069:  CLRF   0E
+....................        
+....................       for(k=1; k<32; k*=2) { 
+006A:  MOVLW  01
+006B:  MOVWF  24
+006C:  MOVF   24,W
+006D:  SUBLW  1F
+006E:  BTFSS  03.0
+006F:  GOTO   080
+....................          if(k!=8) { 
+0070:  MOVF   24,W
+0071:  SUBLW  08
+0072:  BTFSC  03.2
+0073:  GOTO   07D
+....................             PortA = k; 
+0074:  MOVF   24,W
+0075:  MOVWF  0C
+....................             delay_ms(500); 
+0076:  MOVLW  02
+0077:  MOVWF  25
+0078:  MOVLW  FA
+0079:  MOVWF  26
+007A:  CALL   003
+007B:  DECFSZ 25,F
+007C:  GOTO   078
+....................          } 
+....................       } 
+007D:  BCF    03.0
+007E:  RLF    24,F
+007F:  GOTO   06C
+....................       PortA = 0; 
+0080:  CLRF   0C
+....................    } 
+0081:  GOTO   02F
+....................     
+....................    return (0); 
+0082:  MOVLW  00
+0083:  MOVWF  21
+.................... } 
+0084:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3FC4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

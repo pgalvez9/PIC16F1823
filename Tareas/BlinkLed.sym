@@ -1,0 +1,67 @@
+004-005 @READ_PACKED_MEMORY.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004-005 @READ_PROGRAM_MEMORY8.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+00C     PortA
+00E     PortC
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+024     k
+025     main.@SCRATCH1
+026     @delay_ms1.P1
+08C     TrisA
+08E     TrisC
+111.6   C1OUT
+113.6   C2OUT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+291     CCP_1_LOW
+291     CCP_1
+292     CCP_1_HIGH
+
+ROM Allocation:
+0003  @delay_ms1
+0018  main
+0018  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\
+
+Project Files:
+    BlinkLed.c                                              [23-sep.-18 00:37  CRC=4EEE83D4]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h [13-abr.-11 15:01  CRC=691538BE]
+
+Source signature=2118F550
+
+Units:
+    C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\BlinkLed (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      BlinkLed.err
+    Ext Symbols: BlinkLed.esym
+    INHX8:       BlinkLed.hex
+    Symbols:     BlinkLed.sym
+    List:        BlinkLed.lst
+    Debug/COFF:  BlinkLed.cof
+    Project:     BlinkLed.PJT
+    Call Tree:   BlinkLed.tre
+    Statistics:  BlinkLed.STA

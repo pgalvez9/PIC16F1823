@@ -6,7 +6,7 @@
 1. [ ] Dispensador de bebidas
 1. [ ] Termómetro
 
-- Demás relativosa los anteriores
-Tareas que incluyen
+### Las tareas incluyen
 - Código fuente PicC
 - Esquema electrónico en ISIS
+- Otros derivados de los anteriores

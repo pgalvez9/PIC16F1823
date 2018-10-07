@@ -13,5 +13,9 @@ int main(void) {
    
    PortC = 0b000000;
    
+   for(;;) {
+      
+   }
+   
    return (0);
 }

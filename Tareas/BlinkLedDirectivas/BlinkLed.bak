@@ -3,7 +3,7 @@
 
 // NOWDT - 
 // PUT - Power UpTime
-// NOMCLR - Libera el puerto A3
+// NOMCLR - No Master Clear : Libera el puerto A3 de ser RESET y se le puede usar como cualquier otro PIN
 
 #use fast_io(C)
 #use delay(int = 32 000 000)

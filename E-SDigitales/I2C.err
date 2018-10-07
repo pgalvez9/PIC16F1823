@@ -1,0 +1,4 @@
+>>> Warning 202 "I2C.c" Line 16(17,19): Variable never used:   b2
+>>> Warning 202 "I2C.c" Line 17(17,19): Variable never used:   s2
+      Memory usage:   ROM=13%      RAM=7% - 23%
+      0 Errors,  2 Warnings.

@@ -1,0 +1,5 @@
+юдI2C_Slave
+   цдMAIN  0/38  Ram=0
+   Ё  юд??0??
+   юдI2C  0/45  Ram=1
+      юд@I2C_WRITE_1  (Inline)  Ram=1

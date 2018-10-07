@@ -1,0 +1,45 @@
+
+ROM used: 80 (4%)
+          80 (4%) including unused fragments
+
+          0 Average locations per line
+          8 Average locations per statement
+
+RAM used: 9 (7%) at main() level
+          24 (19%) worst case
+
+Stack used: 1 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   31    10 100  Timer1.c
+  452     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.H
+----- -----
+  483    10 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     12  15   0    32  1.0  timer1
+0     38  48   0   149  2.6  MAIN
+
+Program metrics:
+    Functions               2
+    Statements              10
+    Comments                104
+    Volume (V)              216
+    Difficilty (D)          3.6
+    Effort to implement (E) 787
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    71
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-0001E    27  0  
+0001F-007FF    50  1967  
+
+
+

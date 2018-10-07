@@ -1,7 +1,7 @@
 #include <16f1823.h>
 #fuses NOWDT, PUT, NOMCLR
 
-// NOWDT - 
+// NOWDT - No Watch Dog
 // PUT - Power UpTime
 // NOMCLR - No Master Clear : Libera el puerto A3 de ser RESET y se le puede usar como cualquier otro PIN
 

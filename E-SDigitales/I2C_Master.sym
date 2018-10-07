@@ -1,0 +1,77 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004-005 @READ_PACKED_MEMORY.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+024     b1
+025     b2
+026     s1
+027     s2
+028     @I2C_READU_1.P1
+028     @I2C_WRITEU_1.P2
+028     @PSTRINGCN7_61.P3
+028     @delay_ms1.P4
+029     @PSTRINGCN7_61.@SCRATCH1
+02A     @PSTRINGCN7_61.@SCRATCH2
+02B     @PSTRINGCN7_61.@SCRATCH3
+02C     @PUTCHAR_1_.P1
+111.6   C1OUT
+113.6   C2OUT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+001D  @delay_ms1
+004B  @PUTCHAR_1_
+0008  @I2C_WRITEU_1
+0032  @I2C_READU_1
+00C2  main
+0003  @const79
+0079  @PSTRINGCN7_61
+00C2  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\E-SDigitales\
+
+Project Files:
+    I2C_Master.c                                            [06-oct.-18 22:43  CRC=285919B0]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.h [13-abr.-11 15:01  CRC=691538BE]
+
+Source signature=FA838B2C
+
+Units:
+    C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\E-SDigitales\I2C_Master (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      I2C_Master.err
+    Ext Symbols: I2C_Master.esym
+    INHX8:       I2C_Master.hex
+    Symbols:     I2C_Master.sym
+    List:        I2C_Master.lst
+    Debug/COFF:  I2C_Master.cof
+    Project:     I2C_Master.PJT
+    Call Tree:   I2C_Master.tre
+    Statistics:  I2C_Master.STA

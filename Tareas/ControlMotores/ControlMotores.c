@@ -8,10 +8,7 @@
 
 int main(void) {
 // Se definen los puertos como entradas o salidas
-   TrisA = 0b111111;
-   TrisC = 0b000000;
-   
-   PortC = 0b000000;
+   set_tris_C(0);
    
    for(;;) {
       

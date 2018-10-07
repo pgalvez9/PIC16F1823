@@ -1,10 +1,10 @@
-# PIC16F1823
+﻿# PIC16F1823
 ## Tareas
 
 1. [x] Blink Led
-1. [] Control Motores DC y Bi Stepper
-1. [] Dispensador de bebidas
-1. [] Termómetro
+1. [ ] Control Motores DC y Bi Stepper
+1. [ ] Dispensador de bebidas
+1. [ ] Termómetro
 
 - Demás relativosa los anteriores
 Tareas que incluyen

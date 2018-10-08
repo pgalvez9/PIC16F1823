@@ -12,7 +12,7 @@ void main()
 {
    trisa = 0;//todo el puerto A como salida
    trisc = 1;//todo el puerto C como entrada
-   porta=0;
+   porta = 0;
    while(true)
    {
       if(bit_test(portc,0)==1)//si el pin 0 esta encendido

@@ -28,7 +28,7 @@ int main (void) {
    enable_interrupts(INT_EXT);
    enable_interrupts(GLOBAL);
    ***********************************************
-   Lo normal es un L2H
+   Lo normal es un L2H (Low to High)
 */
    set_tris_a(1);
    set_tris_c(0);

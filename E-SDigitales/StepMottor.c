@@ -18,9 +18,9 @@ void main()
    
    while(true)
    {
-      while(bit_test(porta,0)==1){
+      while(bit_test(porta,0) == 1){
          button = 1;
-         if(button == 1&& i  ){
+         if(button == 1 && i  ){
       portc = 0b001100;
       delay_ms(100);
       portc = 0b001001;
@@ -30,8 +30,8 @@ void main()
       portc = 0b000110;
       delay_ms(100);
       
-      if(bit_test(porta,0)==0){
-         button ==0;
+      if(bit_test(porta,0) == 0){
+         button == 0;
          i++;
       }
       

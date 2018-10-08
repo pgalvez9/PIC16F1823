@@ -1,28 +1,42 @@
-004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @READ_PACKED_MEMORY.P1
 004-005 @WRITE_PACKED_MEMORY.P2
-004     @WRITE_PROGRAM_MEMORY8.P3
-004-005 @READ_PACKED_MEMORY.P4
+004-005 @READ_PROGRAM_MEMORY8.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
 006-007 @READ_PACKED_MEMORY.P1
 006-007 @WRITE_PACKED_MEMORY.P2
+00C     PortA
 00E     PortC
 020     @SCRATCH
 021     @SCRATCH
 021     _RETURN_
 022     @SCRATCH
 023     @SCRATCH
+024.0   i_ant
+024.1   j_ant
+024.2   k_ant
+024.3   motorSelector
+024.4   Sentido
+024.5   intensidad
+025     BiStr.u
+025     DC.@SCRATCH1
+025     MAIN.@SCRATCH1
+026     BiStr.@SCRATCH1
+026     MAIN.@SCRATCH2
 08C     TrisA
 08E     TrisC
 111.6   C1OUT
 113.6   C2OUT
-191-192 @READ_PROGRAM_MEMORY8.P1
-191-192 @WRITE_PROGRAM_MEMORY8.P2
+191-192 @WRITE_PROGRAM_MEMORY8.P1
+191-192 @READ_PROGRAM_MEMORY8.P2
 291     CCP_1_LOW
 291     CCP_1
 292     CCP_1_HIGH
 
 ROM Allocation:
-0003  main
-0003  @cinit
+0003  DC
+0012  BiStr
+0077  MAIN
+0077  @cinit
 
 
 User Memory space: 
@@ -33,10 +47,10 @@ Project Directory:
     C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\ControlMotores\
 
 Project Files:
-    ControlMotores.c                                        [05-oct.-18 22:49  CRC=7DFCA5F0]
-    ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h [13-abr.-11 15:01  CRC=691538BE]
+    ControlMotores.c                                        [07-oct.-18 23:50  CRC=AA676C74]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.H [13-abr.-11 15:01  CRC=691538BE]
 
-Source signature=5027176C
+Source signature=7C91DDF0
 
 Units:
     C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\ControlMotores\ControlMotores (main)

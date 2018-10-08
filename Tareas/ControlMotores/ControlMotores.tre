@@ -1,3 +1,5 @@
 青ControlMotores
-   青main  0/24  Ram=0
-      青??0??
+   青MAIN  0/65  Ram=2
+      団??0??
+      団DC  0/15  Ram=1
+      青BiStr  0/101  Ram=2

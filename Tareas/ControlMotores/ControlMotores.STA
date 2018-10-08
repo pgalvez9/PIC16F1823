@@ -1,42 +1,44 @@
 
-ROM used: 27 (1%)
-          27 (1%) including unused fragments
+ROM used: 184 (9%)
+          184 (9%) including unused fragments
 
           0 Average locations per line
-          7 Average locations per statement
+          3 Average locations per statement
 
-RAM used: 5 (4%) at main() level
-          20 (16%) worst case
+RAM used: 8 (6%) at main() level
+          23 (18%) worst case
 
-Stack used: 0 worst case (out of 16 total available)
+Stack used: 1 worst case (out of 16 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   18     4 100  ControlMotores.c
-  452     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h
+   97    56 100  ControlMotores.c
+  452     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.H
 ----- -----
-  470     4 Total
+  549    56 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     24  89   0    74  2.0  main
+0     15   8   1   265  3.7  DC
+0    101  55   2   885  7.3  BiStr
+0     65  35   2   726  5.3  MAIN
 
 Program metrics:
-    Functions               1
-    Statements              4
-    Comments                93
-    Volume (V)              74
-    Difficilty (D)          2.0
-    Effort to implement (E) 148
-    Time to implement (T)   0 minutes
+    Functions               3
+    Statements              56
+    Comments                102
+    Volume (V)              2342
+    Difficilty (D)          16.3
+    Effort to implement (E) 38136
+    Time to implement (T)   35 minutes
     Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   1
-    Maintainability (MI)    161
+    Cyclomatic Complexity   10
+    Maintainability (MI)    107
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     3  0  
-00003-007FF    24  2021  
+00003-007FF   181  1864  
 
 
 

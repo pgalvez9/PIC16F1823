@@ -24,11 +24,12 @@ int hayVaso() {
 
 int main (void) {
 
-// Se utilizará para habilitar las interrupciones
+/* Se utilizará para habilitar las interrupciones
    enable_interrupts(INT_EXT);
    enable_interrupts(GLOBAL);
-//***********************************************
-// Lo normal es un L2H
+   ***********************************************
+   Lo normal es un L2H
+*/
    set_tris_a(1);
    set_tris_c(0);
 

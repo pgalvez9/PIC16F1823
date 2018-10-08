@@ -1,7 +1,7 @@
-D G "__PCM__" 0 0 ""4.120""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""05-oct.-18""
-D G "__TIME__" 0 0 ""16:19:56"" "Standard Header file for the PIC16F1823 device ////////////////"
+D G "__PCM__" 0 27 ""4.120""
+D G "__DEVICE__" 0 27 "1823"
+D G "__DATE__" 0 27 ""29-sep.-18""
+D G "__TIME__" 0 27 ""12:26:55"" "Standard Header file for the PIC16F1823 device ////////////////"
 d G "PIN_A0" 1 22 "96"
 d G "PIN_A1" 1 23 "97"
 d G "PIN_A2" 1 24 "98"
@@ -304,7 +304,9 @@ d G "INT_RA4_H2L" 1 446 "0x20100B08"
 d G "INT_RA5" 1 447 "0x30200B08"
 d G "INT_RA5_L2H" 1 448 "0x10200B08"
 d G "INT_RA5_H2L" 1 449 "0x20200B08"
-F G "main" 0 10 "void()"
+V G "i" 0 4 "int16"
+F G "timer" 0 6 "void()"
+F G "MAIN" 0 14 "void()"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

@@ -1,0 +1,53 @@
+
+ROM used: 386 (19%)
+          386 (19%) including unused fragments
+
+          1 Average locations per line
+          32 Average locations per statement
+
+RAM used: 12 (9%) at main() level
+          34 (27%) worst case
+
+Stack used: 4 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   34    12 100  slave.c
+  452     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h
+----- -----
+  486    12 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   5   1             @delay_ms1
+0     46  12   1    32  1.0  @PUTCHAR_1_
+ Inline        1             @I2C_WRITE_1
+0     78  20   1   176  3.0  I2Cs
+0      8   2   0   388  2.9  @const75
+0     72  19   4             @PSTRINGCN7_61
+0     21   5   3             @DIV88
+0     53  14   2             @PRINTF_U_61
+0     10   3   0             @const84
+0     47  12   0    67  1.6  MAIN
+
+Program metrics:
+    Functions               4
+    Statements              12
+    Comments                92
+    Volume (V)              904
+    Difficilty (D)          8.2
+    Effort to implement (E) 7398
+    Time to implement (T)   7 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    171
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-0001E    27  0  
+0001F-007FF   356  1661  
+
+
+

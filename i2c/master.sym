@@ -1,0 +1,84 @@
+004-005 @WRITE_PACKED_MEMORY.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+004-005 @READ_PACKED_MEMORY.P3
+004-005 @READ_PROGRAM_MEMORY8.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+025     main.b1
+026     main.b2
+027     main.s1
+028     main.s2
+029     @delay_ms1.P1
+029     @I2C_WRITEU_1.P2
+029     @I2C_READU_1.P3
+029     @PRINTF_U_61.P4
+029     @PSTRINGCN7_61.P5
+02A     @PRINTF_U_61.P1
+02A     @PSTRINGCN7_61.@SCRATCH1
+02B     @DIV88.P1
+02B     @PSTRINGCN7_61.@SCRATCH2
+02C     @DIV88.P1
+02C     @PSTRINGCN7_61.@SCRATCH3
+02D     @PUTCHAR_1_.P1
+02D     @DIV88.@SCRATCH1
+111.6   C1OUT
+113.6   C2OUT
+191-192 @WRITE_PROGRAM_MEMORY8.P1
+191-192 @READ_PROGRAM_MEMORY8.P2
+291     CCP_1_LOW
+291     CCP_1
+292     CCP_1_HIGH
+
+ROM Allocation:
+0009  @delay_ms1
+0048  @PUTCHAR_1_
+001E  @I2C_WRITEU_1
+00AC  @I2C_READU_1
+010E  main
+0033  @DIV88
+0076  @PRINTF_U_61
+0003  @const86
+00C5  @PSTRINGCN7_61
+010E  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\i2c\
+
+Project Files:
+    master.c                                                [06-oct.-18 16:55  CRC=B8D0108C]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h [28-sep.-18 17:49  CRC=83310DBC]
+
+Source signature=BF322C04
+
+Units:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\i2c\master (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      master.err
+    Ext Symbols: master.esym
+    INHX8:       master.hex
+    Symbols:     master.sym
+    List:        master.lst
+    Debug/COFF:  master.cof
+    Project:     master.PJT
+    Call Tree:   master.tre
+    Statistics:  master.STA

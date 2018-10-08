@@ -1,0 +1,107 @@
+CCS PCM C Compiler, Version 4.120, 11074               23-sep.-18 21:00
+
+               Filename: C:\Users\Peter\Desktop\GitClass\P16F1823\E-SDigitales\blinkc0.lst
+
+               ROM used: 60 words (3%)
+                         Largest free fragment is 1988
+               RAM used: 5 (4%) at main() level
+                         22 (17%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   019
+0002:  NOP
+.................... #include <16f1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #fuses NOMCLR INTRC_IO PLL_SW 
+.................... #use delay(int = 32Mhz) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  06
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  21
+000C:  CLRF   20
+000D:  DECFSZ 20,F
+000E:  GOTO   00D
+000F:  DECFSZ 21,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  20
+0013:  DECFSZ 20,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  MOVLP  00
+0018:  GOTO   037 (RETURN)
+.................... #byte trisc = 0x08e 
+.................... #byte portc = 0x00e 
+.................... void main() { 
+0019:  CLRF   05
+001A:  CLRF   04
+001B:  MOVLW  1F
+001C:  ANDWF  03,F
+001D:  MOVLW  F4
+001E:  MOVLB  01
+001F:  MOVWF  19
+0020:  MOVLB  03
+0021:  CLRF   0C
+0022:  CLRF   0E
+0023:  MOVLB  02
+0024:  CLRF   12
+0025:  CLRF   11
+0026:  CLRF   14
+0027:  CLRF   13
+....................   //setup_oscillator(OSC_8MHZ | OSC_PLL_ON);            // Set internal oscillator to 8MHz with PLL enabled (32MHz) 
+....................   //setup_adc(ADC_CLOCK_DIV_32);                        // Set ADC conversion time to 32Tosc 
+....................   //setup_adc_ports(sAN1);                              // Configure AN1 pin as analog 
+....................   //set_adc_channel(1);                                 // Select channel AN1 
+....................   setup_dac(DAC_VSS_VDD| DAC_OUTPUT);               // Negative source is VSS and positive source is VDD and output enabled 
+0028:  MOVLW  A0
+0029:  MOVWF  18
+....................   int i = 0; 
+002A:  MOVLB  00
+002B:  CLRF   25
+....................   while(TRUE){ 
+....................   if(i<31) 
+002C:  MOVF   25,W
+002D:  SUBLW  1E
+002E:  BTFSS  03.0
+002F:  GOTO   039
+....................   { 
+....................     dac_write(i);                                     // Write DAC value according to i 
+0030:  MOVF   25,W
+0031:  MOVLB  02
+0032:  MOVWF  19
+....................     delay_ms(10); 
+0033:  MOVLW  0A
+0034:  MOVLB  00
+0035:  MOVWF  26
+0036:  GOTO   003
+....................     i++; 
+0037:  INCF   25,F
+....................   } 
+....................   else 
+0038:  GOTO   03A
+....................   { 
+....................    i=0; 
+0039:  CLRF   25
+....................   } 
+....................   } 
+003A:  GOTO   02C
+.................... } 
+....................  
+....................     
+....................  
+003B:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F84   INTRC_IO NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

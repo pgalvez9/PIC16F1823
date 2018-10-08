@@ -1,0 +1,75 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @READ_PACKED_MEMORY.P2
+004-005 @WRITE_PACKED_MEMORY.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028-029 ms
+02A.0   pms
+02A.1   ps
+02A.2   ps30
+02B-02C s
+02D-02E s30
+02F     @delay_us1.P1
+02F     MAIN.@SCRATCH1
+030     @delay_ms1.P1
+111.6   C1OUT
+113.6   C2OUT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+0050  @delay_ms1
+003D  @delay_us1
+001C  timer
+0065  MAIN
+0065  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\Timer0\
+
+Project Files:
+    Cronometro.c                                            [30-sep.-18 15:59  CRC=7DC01389]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h [28-sep.-18 17:49  CRC=83310DBC]
+
+Source signature=84222F01
+
+Units:
+    C:\Users\Peter\Desktop\GitClass\P16F1823\Timer0\Cronometro (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      Cronometro.err
+    Ext Symbols: Cronometro.esym
+    INHX8:       Cronometro.hex
+    Symbols:     Cronometro.sym
+    List:        Cronometro.lst
+    Debug/COFF:  Cronometro.cof
+    Project:     Cronometro.PJT
+    Call Tree:   Cronometro.tre
+    Statistics:  Cronometro.STA

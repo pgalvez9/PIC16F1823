@@ -20,7 +20,8 @@ void main()
    {
       while(bit_test(porta,0)==1){
          button = 1;
-         if(button == 1&& i  ){
+         delay_ms(100);
+         if(button == 1 ){
       portc = 0b001100;
       delay_ms(100);
       portc = 0b001001;

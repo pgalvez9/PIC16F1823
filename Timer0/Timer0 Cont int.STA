@@ -1,0 +1,46 @@
+
+ROM used: 99 (5%)
+          99 (5%) including unused fragments
+
+          0 Average locations per line
+          10 Average locations per statement
+
+RAM used: 11 (9%) at main() level
+          27 (21%) worst case
+
+Stack used: 2 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   26    10 100  Timer0 Cont int.c
+  452     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f1823.h
+----- -----
+  478    10 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     22  22   1             @delay_ms1
+0     11  11   0    32  1.0  timer
+0     39  39   0   141  2.2  MAIN
+
+Program metrics:
+    Functions               2
+    Statements              10
+    Comments                92
+    Volume (V)              208
+    Difficilty (D)          3.1
+    Effort to implement (E) 651
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    77
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-0001B    24  0  
+0001C-007FF    72  1948  
+
+
+

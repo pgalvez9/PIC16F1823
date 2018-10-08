@@ -1,0 +1,4 @@
+>>> Warning 202 "master.c" Line 14(8,10): Variable never used:   b2
+>>> Warning 202 "master.c" Line 16(8,10): Variable never used:   s2
+      Memory usage:   ROM=18%      RAM=7% - 23%
+      0 Errors,  2 Warnings.

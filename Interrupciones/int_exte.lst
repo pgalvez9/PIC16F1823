@@ -1,0 +1,97 @@
+CCS PCM C Compiler, Version 4.120, 11074               28-sep.-18 10:28
+
+               Filename: C:\Users\Peter\Desktop\GitClass\P16F1823\Interrupciones\int_exte.lst
+
+               ROM used: 56 words (3%)
+                         Largest free fragment is 1991
+               RAM used: 9 (7%) at main() level
+                         24 (19%) worst case
+               Stack:    1 worst case (0 in main + 1 for interrupts)
+
+*
+0000:  MOVLP  00
+0001:  GOTO   025
+0002:  NOP
+*
+0004:  CLRF   03
+0005:  CLRF   0A
+0006:  MOVLB  00
+0007:  MOVF   20,W
+0008:  MOVWF  24
+0009:  MOVF   21,W
+000A:  MOVWF  25
+000B:  MOVF   22,W
+000C:  MOVWF  26
+000D:  MOVF   23,W
+000E:  MOVWF  27
+000F:  BTFSS  0B.4
+0010:  GOTO   013
+0011:  BTFSC  0B.1
+0012:  GOTO   01C
+0013:  MOVF   24,W
+0014:  MOVWF  20
+0015:  MOVF   25,W
+0016:  MOVWF  21
+0017:  MOVF   26,W
+0018:  MOVWF  22
+0019:  MOVF   27,W
+001A:  MOVWF  23
+001B:  RETFIE
+.................... #include <16f1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #fuses  PUT, NOWDT 
+.................... #use delay(int=8000000) 
+.................... #use standard_io(C) 
+.................... #use standard_io(A) 
+....................  
+.................... #INT_EXT 
+.................... void ext() 
+.................... { 
+....................  output_toggle(pin_c0);   
+001C:  MOVLB  01
+001D:  BCF    0E.0
+001E:  MOVLW  01
+001F:  MOVLB  02
+0020:  XORWF  0E,F
+.................... } 
+....................  
+0021:  BCF    0B.1
+0022:  MOVLP  00
+0023:  MOVLB  00
+0024:  GOTO   013
+.................... void main() 
+.................... {  
+0025:  CLRF   05
+0026:  CLRF   04
+0027:  MOVLW  1F
+0028:  ANDWF  03,F
+0029:  MOVLW  74
+002A:  MOVLB  01
+002B:  MOVWF  19
+002C:  MOVLB  03
+002D:  CLRF   0C
+002E:  CLRF   0E
+002F:  MOVLB  02
+0030:  CLRF   12
+0031:  CLRF   11
+0032:  CLRF   14
+0033:  CLRF   13
+....................    enable_interrupts(INT_EXT); 
+0034:  BSF    0B.4
+....................    enable_interrupts(GLOBAL); 
+0035:  MOVLW  C0
+0036:  IORWF  0B,F
+....................    while(1) 
+....................    { 
+....................     
+....................    } 
+0037:  GOTO   037
+.................... } 
+0038:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3FC4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

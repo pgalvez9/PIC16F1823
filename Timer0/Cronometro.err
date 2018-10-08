@@ -1,0 +1,4 @@
+>>> Warning 203 "Cronometro.c" Line 38(1,1): Condition always TRUE
+>>> Warning 202 "Cronometro.c" Line 8(11,14): Variable never used:   s30
+      Memory usage:   ROM=9%      RAM=13% - 26%
+      0 Errors,  2 Warnings.

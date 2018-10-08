@@ -1,0 +1,278 @@
+CCS PCM C Compiler, Version 4.120, 11074               30-sep.-18 15:59
+
+               Filename: C:\Users\Peter\Desktop\GitClass\P16F1823\Timer0\Cronometro.lst
+
+               ROM used: 194 words (9%)
+                         Largest free fragment is 1853
+               RAM used: 17 (13%) at main() level
+                         33 (26%) worst case
+               Stack:    2 worst case (1 in main + 1 for interrupts)
+
+*
+0000:  MOVLP  00
+0001:  GOTO   065
+0002:  NOP
+*
+0004:  CLRF   03
+0005:  CLRF   0A
+0006:  MOVLB  00
+0007:  MOVF   20,W
+0008:  MOVWF  24
+0009:  MOVF   21,W
+000A:  MOVWF  25
+000B:  MOVF   22,W
+000C:  MOVWF  26
+000D:  MOVF   23,W
+000E:  MOVWF  27
+000F:  BTFSS  0B.5
+0010:  GOTO   013
+0011:  BTFSC  0B.2
+0012:  GOTO   01C
+0013:  MOVF   24,W
+0014:  MOVWF  20
+0015:  MOVF   25,W
+0016:  MOVWF  21
+0017:  MOVF   26,W
+0018:  MOVWF  22
+0019:  MOVF   27,W
+001A:  MOVWF  23
+001B:  RETFIE
+.................... #include <16f1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #fuses NOWDT, PUT, NOMCLR 
+.................... #use delay(int=32000000) 
+*
+003D:  MOVLW  02
+003E:  SUBWF  2F,F
+003F:  BTFSS  03.0
+0040:  GOTO   04E
+0041:  MOVLW  20
+0042:  MOVWF  05
+0043:  MOVLW  0F
+0044:  MOVWF  04
+0045:  MOVF   00,W
+0046:  BTFSC  03.2
+0047:  GOTO   04E
+0048:  GOTO   04C
+0049:  GOTO   04A
+004A:  GOTO   04B
+004B:  NOP
+004C:  DECFSZ 00,F
+004D:  GOTO   049
+004E:  MOVLP  00
+004F:  GOTO   097 (RETURN)
+0050:  MOVLW  20
+0051:  MOVWF  05
+0052:  MOVLW  10
+0053:  MOVWF  04
+0054:  MOVF   00,W
+0055:  BTFSC  03.2
+0056:  GOTO   064
+0057:  MOVLW  0A
+0058:  MOVWF  21
+0059:  CLRF   20
+005A:  DECFSZ 20,F
+005B:  GOTO   05A
+005C:  DECFSZ 21,F
+005D:  GOTO   059
+005E:  MOVLW  5F
+005F:  MOVWF  20
+0060:  DECFSZ 20,F
+0061:  GOTO   060
+0062:  DECFSZ 00,F
+0063:  GOTO   057
+0064:  RETURN
+.................... int16 ms = 0; 
+.................... int1 pms = 0; 
+.................... int16 s = 0; 
+.................... int1 ps = 0; 
+.................... int16 s30 = 0; 
+.................... int1 ps30= 0; 
+.................... #INT_TIMER0 
+.................... void timer() 
+.................... { 
+....................  
+....................    ms++; 
+*
+001C:  INCF   28,F
+001D:  BTFSC  03.2
+001E:  INCF   29,F
+....................    pms = 1; 
+001F:  BSF    2A.0
+....................    if(ms==1000) 
+0020:  MOVF   28,W
+0021:  SUBLW  E8
+0022:  BTFSS  03.2
+0023:  GOTO   02E
+0024:  MOVF   29,W
+0025:  SUBLW  03
+0026:  BTFSS  03.2
+0027:  GOTO   02E
+....................    { 
+....................       s++; 
+0028:  INCF   2B,F
+0029:  BTFSC  03.2
+002A:  INCF   2C,F
+....................       ms = 0; 
+002B:  CLRF   29
+002C:  CLRF   28
+....................       ps = 1; 
+002D:  BSF    2A.1
+....................    } 
+....................    if(s==30) 
+002E:  MOVF   2B,W
+002F:  SUBLW  1E
+0030:  BTFSS  03.2
+0031:  GOTO   038
+0032:  MOVF   2C,F
+0033:  BTFSS  03.2
+0034:  GOTO   038
+....................    { 
+....................       ps30=1; 
+0035:  BSF    2A.2
+....................       s = 0; 
+0036:  CLRF   2C
+0037:  CLRF   2B
+....................    } 
+....................    SET_TIMER0(225); 
+0038:  MOVLW  E1
+0039:  MOVWF  15
+.................... } 
+....................  
+003A:  BCF    0B.2
+003B:  MOVLP  00
+003C:  GOTO   013
+.................... void main() 
+.................... { 
+*
+0065:  CLRF   05
+0066:  CLRF   04
+0067:  MOVLW  1F
+0068:  ANDWF  03,F
+0069:  MOVLW  F4
+006A:  MOVLB  01
+006B:  MOVWF  19
+006C:  MOVLB  00
+006D:  CLRF   29
+006E:  CLRF   28
+006F:  BCF    2A.0
+0070:  CLRF   2C
+0071:  CLRF   2B
+0072:  BCF    2A.1
+0073:  CLRF   2E
+0074:  CLRF   2D
+0075:  BCF    2A.2
+0076:  MOVLB  03
+0077:  CLRF   0C
+0078:  CLRF   0E
+0079:  MOVLB  02
+007A:  CLRF   12
+007B:  CLRF   11
+007C:  CLRF   14
+007D:  CLRF   13
+....................    output_c(0); 
+007E:  MOVLB  01
+007F:  CLRF   0E
+0080:  MOVLB  02
+0081:  CLRF   0E
+....................    enable_interrupts(INT_TIMER0); 
+0082:  BSF    0B.5
+....................    enable_interrupts(GLOBAL); 
+0083:  MOVLW  C0
+0084:  IORWF  0B,F
+....................    SETUP_TIMER_0(T0_INTERNAL|T0_DIV_256); 
+0085:  MOVLB  01
+0086:  MOVF   15,W
+0087:  ANDLW  C0
+0088:  IORLW  07
+0089:  MOVWF  15
+....................    SET_TIMER0(225); 
+008A:  MOVLW  E1
+008B:  MOVLB  00
+008C:  MOVWF  15
+....................    while(1) 
+....................    { 
+....................       if(pms==1) 
+008D:  BTFSS  2A.0
+008E:  GOTO   09D
+....................       { 
+....................          output_high(pin_c0); 
+008F:  MOVLB  01
+0090:  BCF    0E.0
+0091:  MOVLB  02
+0092:  BSF    0E.0
+....................          delay_us(100); 
+0093:  MOVLW  64
+0094:  MOVLB  00
+0095:  MOVWF  2F
+0096:  GOTO   03D
+....................          output_low(pin_c0); 
+0097:  MOVLB  01
+0098:  BCF    0E.0
+0099:  MOVLB  02
+009A:  BCF    0E.0
+....................          pms=0; 
+009B:  MOVLB  00
+009C:  BCF    2A.0
+....................       } 
+....................       if(ps==1) 
+009D:  BTFSS  2A.1
+009E:  GOTO   0AD
+....................       { 
+....................          output_high(pin_c1); 
+009F:  MOVLB  01
+00A0:  BCF    0E.1
+00A1:  MOVLB  02
+00A2:  BSF    0E.1
+....................          delay_ms(10); 
+00A3:  MOVLW  0A
+00A4:  MOVLB  00
+00A5:  MOVWF  30
+00A6:  CALL   050
+....................          output_low(pin_c1); 
+00A7:  MOVLB  01
+00A8:  BCF    0E.1
+00A9:  MOVLB  02
+00AA:  BCF    0E.1
+....................          ps=0; 
+00AB:  MOVLB  00
+00AC:  BCF    2A.1
+....................       } 
+....................       if(ps30==1) 
+00AD:  BTFSS  2A.2
+00AE:  GOTO   0C1
+....................       { 
+....................          output_high(pin_c2); 
+00AF:  MOVLB  01
+00B0:  BCF    0E.2
+00B1:  MOVLB  02
+00B2:  BSF    0E.2
+....................          delay_ms(1000); 
+00B3:  MOVLW  04
+00B4:  MOVLB  00
+00B5:  MOVWF  2F
+00B6:  MOVLW  FA
+00B7:  MOVWF  30
+00B8:  CALL   050
+00B9:  DECFSZ 2F,F
+00BA:  GOTO   0B6
+....................          output_low(pin_c2); 
+00BB:  MOVLB  01
+00BC:  BCF    0E.2
+00BD:  MOVLB  02
+00BE:  BCF    0E.2
+....................          ps30=0; 
+00BF:  MOVLB  00
+00C0:  BCF    2A.2
+....................       } 
+....................    } 
+00C1:  GOTO   08D
+.................... } 
+00C2:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F84   INTRC_IO NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

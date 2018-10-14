@@ -1,0 +1,147 @@
+CCS PCM C Compiler, Version 4.120, 31882               14-oct.-18 01:03
+
+               Filename: C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\ControlMotores\Maestro.lst
+
+               ROM used: 92 words (4%)
+                         Largest free fragment is 1956
+               RAM used: 5 (4%) at main() level
+                         21 (16%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   019
+0002:  NOP
+.................... #include <16F1823.H> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #use fast_IO(A) 
+.................... #use fast_IO(C) 
+.................... #fuses PUT, NOWDT, NOMCLR 
+....................  
+.................... #use delay(int = 32 MHz) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  05
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  21
+000C:  CLRF   20
+000D:  DECFSZ 20,F
+000E:  GOTO   00D
+000F:  DECFSZ 21,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  20
+0013:  DECFSZ 20,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  MOVLP  00
+0018:  GOTO   034 (RETURN)
+.................... #BYTE TrisA = 0x08c 
+.................... #BYTE TrisC = 0x08e 
+.................... #byte PortA = 0x00c 
+.................... #BYTE PortC = 0x00e 
+....................  
+....................  
+....................    /* 
+....................       bit_set(Port,x) 
+....................       bit_clear(Port,x) 
+....................       bit_test(Port,x) 
+....................    */  
+....................  
+.................... int main(void) { 
+0019:  CLRF   05
+001A:  CLRF   04
+001B:  MOVLW  1F
+001C:  ANDWF  03,F
+001D:  MOVLW  F4
+001E:  MOVLB  01
+001F:  MOVWF  19
+0020:  MOVLB  03
+0021:  CLRF   0C
+0022:  CLRF   0E
+0023:  MOVLB  02
+0024:  CLRF   12
+0025:  CLRF   11
+0026:  CLRF   14
+0027:  CLRF   13
+....................  
+....................    set_tris_A(1); 
+0028:  MOVLW  01
+0029:  MOVLB  01
+002A:  MOVWF  0C
+....................    set_tris_C(0); 
+002B:  MOVLW  00
+002C:  MOVWF  0E
+....................    PortA = 1; 
+002D:  MOVLW  01
+002E:  MOVLB  00
+002F:  MOVWF  0C
+....................    PortC = 0; 
+0030:  CLRF   0E
+....................    delay_ms(100); 
+0031:  MOVLW  64
+0032:  MOVWF  25
+0033:  GOTO   003
+....................     
+....................    while (true) { 
+....................       output_bit(Pin_C0,bit_test(PortA,0)); 
+0034:  BTFSC  0C.0
+0035:  GOTO   03A
+0036:  MOVLB  02
+0037:  BCF    0E.0
+0038:  GOTO   03C
+0039:  MOVLB  00
+003A:  MOVLB  02
+003B:  BSF    0E.0
+....................       output_bit(Pin_C1,bit_test(PortA,1)); 
+003C:  MOVLB  00
+003D:  BTFSC  0C.1
+003E:  GOTO   043
+003F:  MOVLB  02
+0040:  BCF    0E.1
+0041:  GOTO   045
+0042:  MOVLB  00
+0043:  MOVLB  02
+0044:  BSF    0E.1
+....................       output_bit(Pin_C2,bit_test(PortA,2)); 
+0045:  MOVLB  00
+0046:  BTFSC  0C.2
+0047:  GOTO   04C
+0048:  MOVLB  02
+0049:  BCF    0E.2
+004A:  GOTO   04E
+004B:  MOVLB  00
+004C:  MOVLB  02
+004D:  BSF    0E.2
+....................       output_bit(Pin_C3,bit_test(PortA,3));       
+004E:  MOVLB  00
+004F:  BTFSC  0C.3
+0050:  GOTO   055
+0051:  MOVLB  02
+0052:  BCF    0E.3
+0053:  GOTO   057
+0054:  MOVLB  00
+0055:  MOVLB  02
+0056:  BSF    0E.3
+....................    } 
+0057:  MOVLB  00
+0058:  GOTO   034
+....................     
+....................    return 0; 
+0059:  MOVLW  00
+005A:  MOVWF  21
+....................     
+.................... } 
+005B:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F84   INTRC_IO NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

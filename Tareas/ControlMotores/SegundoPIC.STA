@@ -1,0 +1,42 @@
+
+ROM used: 28 (1%)
+          28 (1%) including unused fragments
+
+          0 Average locations per line
+          6 Average locations per statement
+
+RAM used: 5 (4%) at main() level
+          20 (16%) worst case
+
+Stack used: 0 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   26     5 100  SegundoPIC.c
+  452     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.H
+----- -----
+  478     5 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     25  89   0    84  2.0  main
+
+Program metrics:
+    Functions               1
+    Statements              5
+    Comments                97
+    Volume (V)              84
+    Difficilty (D)          2.0
+    Effort to implement (E) 172
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    143
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-007FF    25  2020  
+
+
+

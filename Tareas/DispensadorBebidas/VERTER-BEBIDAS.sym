@@ -1,0 +1,68 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @READ_PACKED_MEMORY.P2
+004-005 @WRITE_PACKED_MEMORY.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+00C     PortA
+00E     PortC
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+08C     TrisA
+08E     TrisC
+111.6   C1OUT
+113.6   C2OUT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+001C  interrupcion
+001F  MAIN
+001F  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\DispensadorBebidas\
+
+Project Files:
+    VERTER-BEBIDAS.c                                        [14-oct.-18 01:26  CRC=35C8F333]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.h [13-abr.-11 15:01  CRC=691538BE]
+
+Source signature=07F364AF
+
+Units:
+    C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\DispensadorBebidas\VERTER-BEBIDAS (main)
+
+Compiler Settings:
+    Processor:      PIC16F1823
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      VERTER-BEBIDAS.err
+    Ext Symbols: VERTER-BEBIDAS.esym
+    INHX8:       VERTER-BEBIDAS.hex
+    Symbols:     VERTER-BEBIDAS.sym
+    List:        VERTER-BEBIDAS.lst
+    Debug/COFF:  VERTER-BEBIDAS.cof
+    Project:     VERTER-BEBIDAS.PJT
+    Call Tree:   VERTER-BEBIDAS.tre
+    Statistics:  VERTER-BEBIDAS.STA

@@ -1,8 +1,14 @@
-#INCLUDE <16G1823.H>
+#INCLUDE <16F1823.h>
+#FUSES NOWDT, PUT, NOMCLR
 
-#USE FAST_IO
+#USE FAST_IO(A)
+#USE FAST_IO(C)
 
-#USE DELAY(32 000 000)
+#USE DELAY(CLOCK = 32000000)
+#BYTE TrisA = 0x08c
+#BYTE TrisC = 0x08e
+#BYTE PortA = 0x00c
+#BYTE PortC = 0x00e
 
 #INT_EXT
 void interrupcion() {
@@ -10,19 +16,13 @@ void interrupcion() {
       la función que esté inmediatamente abajo de
       INT_EXT será lo que se ejecute en una interrupcion
    */
+   
 }
 
-int llenaVaso() {
+void llenaVaso();
+void seleccionaVaso();
 
-   return(0);
-}
-
-int hayVaso() {
-
-   return(0);
-}
-
-int main (void) {
+void main (void) {
 
 /* Se utilizará para habilitar las interrupciones
    enable_interrupts(INT_EXT);
@@ -30,12 +30,14 @@ int main (void) {
    ***********************************************
    Lo normal es un L2H (Low to High)
 */
+   enable_interrupts(INT_EXT);
+   enable_interrupts(GLOBAL);
    set_tris_a(1);
    set_tris_c(0);
+   PortA = 1;
+   PortC = 0;
 
    for(;;) {
-      bit_test(a0);
+      output_bit(Pin_C0, bit_test(PortA,0));
    }
-
-   return(0);
 }

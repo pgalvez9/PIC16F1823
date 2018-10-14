@@ -1,0 +1,128 @@
+CCS PCM C Compiler, Version 4.120, 31882               14-oct.-18 01:26
+
+               Filename: C:\Users\Public\Apoyos\DiseñoMecatrónico\PIC16F1823\Tareas\DispensadorBebidas\VERTER-BEBIDAS.lst
+
+               ROM used: 65 words (3%)
+                         Largest free fragment is 1982
+               RAM used: 9 (7%) at main() level
+                         24 (19%) worst case
+               Stack:    1 worst case (0 in main + 1 for interrupts)
+
+*
+0000:  MOVLP  00
+0001:  GOTO   01F
+0002:  NOP
+*
+0004:  CLRF   03
+0005:  CLRF   0A
+0006:  MOVLB  00
+0007:  MOVF   20,W
+0008:  MOVWF  24
+0009:  MOVF   21,W
+000A:  MOVWF  25
+000B:  MOVF   22,W
+000C:  MOVWF  26
+000D:  MOVF   23,W
+000E:  MOVWF  27
+000F:  BTFSS  0B.4
+0010:  GOTO   013
+0011:  BTFSC  0B.1
+0012:  GOTO   01C
+0013:  MOVF   24,W
+0014:  MOVWF  20
+0015:  MOVF   25,W
+0016:  MOVWF  21
+0017:  MOVF   26,W
+0018:  MOVWF  22
+0019:  MOVF   27,W
+001A:  MOVWF  23
+001B:  RETFIE
+.................... #INCLUDE <16F1823.h> 
+.................... //////// Standard Header file for the PIC16F1823 device //////////////// 
+.................... #device PIC16F1823 
+.................... #list 
+....................  
+.................... #FUSES NOWDT, PUT, NOMCLR 
+....................  
+.................... #USE FAST_IO(A) 
+.................... #USE FAST_IO(C) 
+....................  
+.................... #USE DELAY(CLOCK = 32000000) 
+.................... #BYTE TrisA = 0x08c 
+.................... #BYTE TrisC = 0x08e 
+.................... #BYTE PortA = 0x00c 
+.................... #BYTE PortC = 0x00e 
+....................  
+.................... #INT_EXT 
+.................... void interrupcion() { 
+....................    /* 
+....................       la función que esté inmediatamente abajo de 
+....................       INT_EXT será lo que se ejecute en una interrupcion 
+....................    */ 
+....................     
+.................... } 
+....................  
+001C:  BCF    0B.1
+001D:  MOVLP  00
+001E:  GOTO   013
+.................... void llenaVaso(); 
+.................... void seleccionaVaso(); 
+....................  
+.................... void main (void) { 
+001F:  CLRF   05
+0020:  CLRF   04
+0021:  MOVLW  1F
+0022:  ANDWF  03,F
+0023:  MOVLB  03
+0024:  CLRF   0C
+0025:  CLRF   0E
+0026:  MOVLB  02
+0027:  CLRF   12
+0028:  CLRF   11
+0029:  CLRF   14
+002A:  CLRF   13
+....................  
+.................... /* Se utilizará para habilitar las interrupciones 
+....................    enable_interrupts(INT_EXT); 
+....................    enable_interrupts(GLOBAL); 
+....................    *********************************************** 
+....................    Lo normal es un L2H (Low to High) 
+.................... */ 
+....................    enable_interrupts(INT_EXT); 
+002B:  BSF    0B.4
+....................    enable_interrupts(GLOBAL); 
+002C:  MOVLW  C0
+002D:  IORWF  0B,F
+....................    set_tris_a(1); 
+002E:  MOVLW  01
+002F:  MOVLB  01
+0030:  MOVWF  0C
+....................    set_tris_c(0); 
+0031:  MOVLW  00
+0032:  MOVWF  0E
+....................    PortA = 1; 
+0033:  MOVLW  01
+0034:  MOVLB  00
+0035:  MOVWF  0C
+....................    PortC = 0; 
+0036:  CLRF   0E
+....................  
+....................    for(;;) { 
+....................       output_bit(Pin_C0, bit_test(PortA,0)); 
+0037:  BTFSC  0C.0
+0038:  GOTO   03D
+0039:  MOVLB  02
+003A:  BCF    0E.0
+003B:  GOTO   03F
+003C:  MOVLB  00
+003D:  MOVLB  02
+003E:  BSF    0E.0
+....................    } 
+003F:  MOVLB  00
+0040:  GOTO   037
+.................... } 
+0041:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F87   ECH NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1FFF   NOWRT PLL STVREN BORV19 NODEBUG NOLVP

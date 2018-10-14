@@ -1,0 +1,45 @@
+
+ROM used: 65 (3%)
+          65 (3%) including unused fragments
+
+          0 Average locations per line
+          7 Average locations per statement
+
+RAM used: 9 (7%) at main() level
+          24 (19%) worst case
+
+Stack used: 1 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   44     9 100  VERTER-BEBIDAS.c
+  452     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F1823.h
+----- -----
+  496     9 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0      3   5   0     3  0.0  interrupcion
+0     35  54   0   197  2.7  MAIN
+
+Program metrics:
+    Functions               2
+    Statements              9
+    Comments                102
+    Volume (V)              214
+    Difficilty (D)          3.4
+    Effort to implement (E) 733
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    72
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-0001B    24  0  
+0001C-007FF    38  1982  
+
+
+

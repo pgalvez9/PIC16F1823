@@ -6,7 +6,7 @@
 *.STA
 *.sym
 *.tre
-*.conf
+*.cof
 *.sts
 *.rte
 *.PWI

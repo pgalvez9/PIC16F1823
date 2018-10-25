@@ -1,4 +1,0 @@
->>> Warning 203 "Timer0 Cont int.c" Line 21(1,1): Condition always TRUE
->>> Warning 202 "Timer0 Cont int.c" Line 4(9,10): Variable never used:   i
-      Memory usage:   ROM=5%      RAM=9% - 21%
-      0 Errors,  2 Warnings.

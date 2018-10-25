@@ -1,3 +1,0 @@
->>> Warning 203 "blink_led_directivas.c" Line 25(1,1): Condition always TRUE
-      Memory usage:   ROM=5%      RAM=7% - 20%
-      0 Errors,  1 Warnings.

@@ -3,6 +3,7 @@
 
 1. [x] Blink Led
 1. [ ] Control Motores DC y Bi Stepper
+1. [ ] Cronómetro
 1. [ ] Dispensador de bebidas
 1. [ ] Termómetro
 

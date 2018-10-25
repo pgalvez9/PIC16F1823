@@ -1,0 +1,16 @@
+# Combinación de C y Diseños de ISIS-Proteus
+*.bak
+*.err
+*.EDF
+*.lst
+*.STA
+*.sym
+*.tre
+*.conf
+*.sts
+*.rte
+*.PWI
+*.esym
+*.DO
+*.DBK
+*.log

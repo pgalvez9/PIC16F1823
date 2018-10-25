@@ -1,9 +1,0 @@
-#INCLUDE <16f1823.h>
-
-#FUSES NOMCLR, PUT, NOWDT
-#USE Delay(Clock = 32000000)
-
-int main(void) {
-
-   return 0;
-}

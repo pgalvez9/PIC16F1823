@@ -27,25 +27,36 @@ int main(void) {
    set_tris_C(0);
    PortA = 1;
    PortC = 0;
+   
+   bit_clear(PortC,0);
+   bit_clear(PortC,1);
+   bit_clear(PortC,2);
+   bit_clear(PortC,3);
+   
    delay_ms(100);
    
    for(;;) {
    
       if(bit_test(PortA,0)) {
          bit_set(PortC,0);
+         
+               if(bit_test(PortA,2)) {
+                  
+                  bit_clear(PortC,1);
+                  delay_us(1);
+                  bit_set(PortC,0);
+               }
+               else {
+                  bit_clear(PortC,0);
+                  delay_us(1);
+                  bit_set(PortC,1);
+               }
       }
       else {
-         bit_clear(PortC,0);      
-      }
-      
-      if(bit_test(PortA,2)) {
-         bit_set(PortC,0);
+         bit_clear(PortC,0);
          bit_clear(PortC,1);
       }
-      else {
-         bit_set(PortC,1);
-         bit_clear(PortC,0);
-      }
+      
    }
    return 0;
 }

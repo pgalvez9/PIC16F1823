@@ -25,11 +25,15 @@
 */
 int main(void) {
 
-   set_tris_A(1);
-   set_tris_C(0);
+   set_tris_A(0x0f);
+   set_tris_C(0x00);
    PortA = 1;
    PortC = 0;
    delay_ms(100);
+   
+   bit_clear(PortC,0);
+   bit_clear(PortC,1);
+   bit_clear(PortC,3);
    
    for(;;) {
       if(bit_test(PortA,0)) {
